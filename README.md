@@ -30,11 +30,12 @@ Before using `Taurus`, ensure you have the following dependencies installed on y
 
 ## Installation Steps
 
-1. Clone the repository:
+### Step 1: Clone the repository:
 
-   ```bash
-   git clone https://github.com/yourusername/Taurus.git
-   cd Taurus
+```bash
+git clone https://github.com/yourusername/Taurus.git
+cd Taurus
+```
 
 ### Step 2: Rebuild the Tool
 
@@ -60,9 +61,9 @@ sudo mv taurus /usr/local/bin/
  **Run the Tool**:
    Test the tool to ensure that your changes work as expected:
 
-   ```bash
-   taurus -h
-   ```
+```bash
+taurus -h
+```
 
 
 Install these tools using their respective installation methods, typically through package managers or direct downloads from their repositories.
@@ -73,9 +74,9 @@ Install these tools using their respective installation methods, typically throu
 
 2. **Run Taurus**: Execute `Taurus` using the following command:
 
-   ```bash
-   go run Taurus.go -d domains.txt // Name domains.txt which contains your targeted domains.
-   ```
+```bash
+go run Taurus.go -d domains.txt // Name domains.txt which contains your targeted domains.
+```
 
 3. **Follow the Prompts**: After running the commands, you will be prompted to continue with an optional Nmap scan on the discovered subdomains. Respond with `yes` or `no`.
 
@@ -92,15 +93,15 @@ Install these tools using their respective installation methods, typically throu
 
 - To run the tool with a custom file:
   
-  ```bash
-  go run Taurus.go -d mydomains.txt
-  ```
+```bash
+go run Taurus.go -d mydomains.txt
+```
 
 - To skip the Nmap scan:
   
-  ```bash
-  Do you want to continue with the Nmap scan? (yes or no):no
-  ```
+```bash
+Do you want to continue with the Nmap scan? (yes or no):no
+```
 
 ## Help
 
