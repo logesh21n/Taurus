@@ -105,7 +105,7 @@ Do you want to continue with the Nmap scan? (yes or no):no
 
 ## Help
 
-If any problem in running the tool, just ping me @
+If any problem in running the tool, just ping me or use issues tab.
 
 ## Contributing
 
