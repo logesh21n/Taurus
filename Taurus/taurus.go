@@ -20,6 +20,17 @@ func runCommand(command string) error {
 }
 
 func main() {
+
+		
+	taurusArt := `
+	 _____                          
+	|_   _|_ _ _   _ _ __ _   _ ___ 
+	  | |/ _` + "`" + ` | | | | '__| | | / __|
+	  | | (_| | |_| | |  | |_| \__ \
+	  |_|\__,_|\__,_|_|   \__,_|___/
+	`
+
+	fmt.Println(taurusArt)
 	domainsFile := flag.String("d", "domains.txt", "File containing the list of domains")
 	help := flag.Bool("h", false, "Show help")
 
