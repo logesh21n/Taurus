@@ -2,15 +2,17 @@
 
 ## Overview
 
-`Taurus` is a command-line utility designed to automate the process of gathering subdomain information and performing reconnaissance on specified domains. It integrates multiple tools and techniques to identify subdomains, check their availability, and assess their security posture.
+**Taurus** is a command-line utility designed to automate the process of gathering subdomain information and also performing reconnaissance on specified domains. It integrates multiple tools and web archieves to identify subdomains, check their availability, and assess their security posture.
+
+> There is nothing new in this tool, but it saves your time and makes your subdomain enumeration process easier, thereby expanding your attack surface.
 
 ## Features
 
-- **Subdomain Enumeration**: Utilizes various tools like `subfinder`, `interlace`, `sublist3r`, and `amass` to discover subdomains. Also performs `github` recon.
-
-- **Data Collection**: Retrieves subdomain data from multiple sources, including web services and public datasets.
+- **Subdomain Enumeration**: Utilizes various tools like `subfinder`, `interlace`, `sublist3r`, `web archieves` and `rapidns` to discover subdomains.
 - **Alive Check**: Checks the live status of discovered subdomains using `httpx`.
-- **Vulnerability Scanning**: Optionally performs Nmap scans on valid subdomains to identify potential vulnerabilities. This process can take time.
+- **Data Collection**: Retrieves subdomain data like `dead urls`, `active urls` and also `crawling` the domains from multiple sources, including web services and public datasets.
+- **Finding Secrets**: It will find secrets in JS files like `api keys`, `access tokens`, `secret keys` and many more.
+- **Vulnerability Scanning**: Optionally performs Nmap scans on valid subdomains to identify vulnerabilities. This process will take time to complete.
 - **Output Management**: Consolidates results into organized output files for easy analysis.
 
 # Installation Instructions for Taurus
@@ -75,18 +77,18 @@ Install these tools using their respective installation methods, typically throu
 2. **Run Taurus**: Execute `Taurus` using the following command:
 
 ```bash
-go run Taurus.go -d domains.txt // Name domains.txt which contains your targeted domains.
+taurus -d domains.txt // Name domains.txt which contains your targeted domains.
 ```
 
-3. **Follow the Prompts**: After running the commands, you will be prompted to continue with an optional Nmap scan on the discovered subdomains. Respond with `yes` or `no`.
+3. **Follow the Prompts**: After finishing the subdomain enumeration, you will be prompted to continue with an optional Nmap scan on the discovered subdomains. Respond with `yes` or `no`.
 
 ## Output
 
 - **Subdomains**: The tool generates multiple output files, including:
   - `subdomains1.txt`, `subdomains2.txt`, ..., `subdomains9.txt` - various sources of discovered subdomains.
-  - `sortedSubdomains.txt` - a unique, sorted list of all discovered subdomains.
-  - `correctedSubdomains.txt` - validated and filtered subdomains ready for further analysis.
-  - `aliveSubdomain.txt` - live subdomains after a health check.
+  - `sortedSubdomains.txt` - a unique, sorted list of all discovered subdomains. This can also have the services domains used by your target.
+  - `correctedSubdomains.txt` - validated and filtered subdomains of your target ready for further analysis.
+  - `aliveSubdomain.txt` - this contains alive subdomains.
   - `nmap` - results of the optional Nmap scan (if executed).
 
 ## Example Commands
@@ -94,7 +96,7 @@ go run Taurus.go -d domains.txt // Name domains.txt which contains your targeted
 - To run the tool with a custom file:
   
 ```bash
-go run Taurus.go -d mydomains.txt
+taurus.go -d mydomains.txt
 ```
 
 - To skip the Nmap scan:
@@ -105,7 +107,7 @@ Do you want to continue with the Nmap scan? (yes or no):no
 
 ## Help
 
-If any problem in running the tool, just ping me or use issues tab.
+If any problem in running the tool, just ping me @[here](https://x.com/NLogesh21).
 
 ## Contributing
 
