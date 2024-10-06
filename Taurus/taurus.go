@@ -20,20 +20,16 @@ func runCommand(command string) error {
 }
 
 func main() {
-	// Define command-line flags
 	domainsFile := flag.String("d", "domains.txt", "File containing the list of domains")
 	help := flag.Bool("h", false, "Show help")
 
-	// Parse command-line flags
 	flag.Parse()
 
-	// Show help if requested
 	if *help {
 		flag.Usage()
 		return
 	}
 
-	// Define the commands to run
 	commands := []string{
 		fmt.Sprintf("subfinder -dL %s -all -recursive > subdomains1.txt", *domainsFile),
 
@@ -98,7 +94,6 @@ func main() {
 		fmt.Sprintf("interlace -tL correctedSubdomains.txt -c \"dig _target_ CNAME\" > dig_CNAME.txt", *domainsFile),
 	}
 
-	// Execute each command
 	for _, command := range commands {
 		fmt.Printf("Running command: %s\n", command)
 		if err := runCommand(command); err != nil {
@@ -107,11 +102,10 @@ func main() {
 		}
 	}
 
-	// Prompt user for Nmap scan
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Do you want to continue with the Nmap scan? (yes or no): ")
 	response, _ := reader.ReadString('\n')
-	response = strings.TrimSpace(response) // Remove newline character
+	response = strings.TrimSpace(response) 
 
 	if strings.ToLower(response) == "yes" {
 		nmapCommand := fmt.Sprintf("interlace -tL correctedSubdomains.txt -c \"nmap -sC -sV '_target_' -T4\" > nmap")
