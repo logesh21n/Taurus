@@ -30,6 +30,8 @@ Before using `Taurus`, ensure you have the following dependencies installed on y
 7. **waybackurls**: Install via [its GitHub repository](https://github.com/tomnomnom/waybackurls#installation).
 8. **anew**: Install from [its GitHub repository](https://github.com/tj/anew#installation).
 
+Install these tools using their respective installation methods, typically through package managers or direct downloads from their repositories.
+
 ## Installation Steps
 
 ### Step 1: Clone the repository:
@@ -67,17 +69,14 @@ sudo mv taurus /usr/local/bin/
 taurus -h
 ```
 
-
-Install these tools using their respective installation methods, typically through package managers or direct downloads from their repositories.
-
 ## Usage
 
-1. **Prepare a Domains File**: Create a text file named `domains.txt` containing the list of domains you want to analyze, with one domain per line.
+1. **Prepare a Domains File**: Create a text file `domains.txt` containing the list of domains you want to analyze, with one domain per line.
 
 2. **Run Taurus**: Execute `Taurus` using the following command:
 
 ```bash
-taurus -d domains.txt // Name domains.txt which contains your targeted domains.
+taurus -d domains.txt 
 ```
 
 3. **Follow the Prompts**: After finishing the subdomain enumeration, you will be prompted to continue with an optional Nmap scan on the discovered subdomains. Respond with `yes` or `no`.
@@ -86,18 +85,12 @@ taurus -d domains.txt // Name domains.txt which contains your targeted domains.
 
 - **Subdomains**: The tool generates multiple output files, including:
   - `subdomains1.txt`, `subdomains2.txt`, ..., `subdomains9.txt` - various sources of discovered subdomains.
-  - `sortedSubdomains.txt` - a unique, sorted list of all discovered subdomains. This can also have the services domains used by your target.
+  - `sortedSubdomains.txt` - a unique, sorted list of all discovered subdomains. This can also contains the services domains used by your target.
   - `correctedSubdomains.txt` - validated and filtered subdomains of your target ready for further analysis.
   - `aliveSubdomain.txt` - this contains alive subdomains.
   - `nmap` - results of the optional Nmap scan (if executed).
 
 ## Example Commands
-
-- To run the tool with a custom file:
-  
-```bash
-taurus.go -d mydomains.txt
-```
 
 - To skip the Nmap scan:
   
