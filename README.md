@@ -35,7 +35,7 @@ Before using `Taurus`, ensure you have the following dependencies installed on y
 ### Step 1: Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/Taurus.git
+git clone https://github.com/logesh21n/Taurus.git
 cd Taurus
 ```
 
